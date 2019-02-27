@@ -8,7 +8,6 @@ var bodyClick = document.querySelector('.main-container');
 var search = document.querySelector('.search-bar-style')
 var title = document.querySelector('#title-input');
 var caption = document.querySelector('#caption-input');
-var chooseBtn = document.querySelector('') 
 var reader = new FileReader();
 
 
@@ -19,9 +18,8 @@ bodyClick.addEventListener('focusout', saveContent);
 search.addEventListener('keyup', searchPhotos);
 title.addEventListener('input', saveStatus);
 caption.addEventListener('input', saveStatus);
-
-
-
+input.addEventListener('input', saveStatus);
+viewFavsBtn.addEventListener('click', showFaves)
 
 
 // FUNCTIONS
@@ -31,7 +29,7 @@ function createPhoto(e) {
   var title = document.querySelector('#title-input').value
   var caption = document.querySelector('#caption-input').value
   var newPhoto = new Photo (Date.now(), title, caption, e.target.result);
-  console.log("line 21", newPhoto);
+  clearInputs();
   photosArray.push(newPhoto);
   newPhoto.saveToStorage(photosArray)
   publishPhoto(newPhoto);
@@ -65,7 +63,16 @@ function loadAlbum(prsArray) {
     publishPhoto(newPhotoWithMethods);
     photosArray.push(newPhotoWithMethods);
     loadFavs(prsArray);
+    addToAlbum.disabled = true
   })
+}
+
+function saveStatus() {
+  if (title.value && caption.value && input.files[0]) {
+    addToAlbum.disabled = false;
+  } else {
+    addToAlbum.disabled = true;
+  }
 }
 
 function loadFavs(prsArray) {
@@ -98,7 +105,6 @@ function deletePhoto(e) {
 function findPhoto(e) {
   var photo = e.target.closest('article');
   var photoId = parseInt(photo.getAttribute('data-id'));
-  console.log(photoId);
   return photosArray.find(function(photos) {
     return photos.photoId === photoId;
   });
@@ -107,27 +113,20 @@ function findPhoto(e) {
 function saveContent(e) {
   var element = e.target;
   var text = e.target.textContent;
-  console.log("line 89", element, text);
   var targetPhoto = findPhoto(e);
   var inputType = element.dataset.content;
-  console.log("line 92", inputType);
     targetPhoto[inputType] = text;
   targetPhoto.updatePhoto();
   targetPhoto.saveToStorage(photosArray);
 }
-  // toggle img to fav or not fav
-  // toggle fav boolean true or false
+
 function favClick(e) {
   var element = e.target;
-  console.log('line 107', element);
   var targetPhoto = findPhoto(e);
-  var value = !JSON.parse(element.dataset.fav);
   if (!targetPhoto.favorite) {
     showFav(element);
     activateFav(targetPhoto);
-
-    }
-    else {
+    } else {
       hideFav(element);
       deactivateFav(targetPhoto);
     }
@@ -139,7 +138,6 @@ function deactivateFav(targetPhoto) {
   (targetPhoto.favorite = false);
   targetPhoto.updatePhoto();
   targetPhoto.saveToStorage(photosArray);
-  console.log(targetPhoto.favorite);
 }
 
 function showFav(element) {
@@ -152,7 +150,25 @@ function hideFav(element) {
 
 function activateFav(targetPhoto) {
   (targetPhoto.favorite = true);
-  console.log("line 124",targetPhoto.favorite);
+}
+
+function clearInputs() {
+  title.value = '';
+  caption.value = '';
+}
+
+function showFaves(e) {
+  var show = viewFavsBtn.value;
+  var regex = new RegExp(show, 'i');
+  var photoFavs = [];
+  clearPhotos();
+  for (let i = 0; i < photosArray.length; i ++) {
+    if (photosArray[i].favorite == true) {
+      photoFavs.push(photosArray[i]);
+      publishPhoto(photosArray[i]);
+      loadFavs(photosArray[i]);
+    }
+  }
 }
 
 function searchPhotos(e) {

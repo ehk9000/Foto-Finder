@@ -115,12 +115,21 @@ label {
   background-color: #938284;
 }
 
+.add-btn:disabled {
+  background-color: #938284;
+}
+
 .main-container {
   background-color: #C2B2B4;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: auto;
   padding: 20px;
+}
+
+h4 {
+  font-weight: 700;
+  color: #3E2A35;
 }
 
 .image-card {
