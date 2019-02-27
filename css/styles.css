@@ -130,6 +130,8 @@ label {
 h4 {
   font-weight: 700;
   color: #3E2A35;
+  text-align: center;
+  font-size: 18px;
 }
 
 .image-card {
@@ -174,15 +176,17 @@ h3 {
   overflow: auto;
 }
 
+.hide-me {
+  display: none;
+}
+
 .delete-btn {
   margin-left: 10px;
 }
 
 .fav-btn {
   margin-right: 10px;
-
 }
-
 
 @media screen and (max-width: 670px) {
 

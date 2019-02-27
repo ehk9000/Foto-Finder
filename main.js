@@ -56,6 +56,7 @@ function publishPhoto(newPhotoObj) {
     </section>
     </article>`
     photoContainer.insertAdjacentHTML('afterbegin', text);
+    checkEmpty();
 }
 
 function loadAlbum(prsArray) {
@@ -74,6 +75,14 @@ function saveStatus() {
     addToAlbum.disabled = false;
   } else {
     addToAlbum.disabled = true;
+  }
+}
+function checkEmpty() {
+  var noUpload = document.querySelector('.no-upload-msg');
+  console.log(noUpload);
+  if (!photosArray == []) {
+    noUpload.classList.add('hide-me');
+
   }
 }
 
