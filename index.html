@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foto Finder</title>
+  </head>
+  <body>
+    <div class="nav-header-color-wraper">
+      <nav class="nav-bar-style">
+        <h1>Foto <img  class="foto-logo-style"src="./images/foto-finder-logo.svg" alt="">Finder</h1>
+        <section class="search-container">
+          <input  class="search-bar-style" type="text" name="Search" placeholder="Search">
+          <i class="material-icons">search</i>
+        </section>
+      </nav>
+      <header class="input-template">
+        <form class="photo-input-style">
+          <section class="input-container">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title-input" class="input-style">
+          </section>
+          <section class="input-container">
+            <label for="caption" >Caption</label>
+            <input type="text" name="caption" id="caption-input" class="input-style">
+          </section>
+        </form>
+        <section class="input-container">
+          <label for="image-upload" class="choose-label">Choose File</label>
+          <input type="file" name="file" class="choose-input" id="image-upload"></input>
+          <div class="input-btn-container">
+            <button type="button" name="favorites" class="view-fav-btn">View Favorites</button>
+            <button type="button" name="add" class="add-btn">Add to Album</button>
+          </div>
+        </section>
+      </header>
+    </div>
+    <main class="main-container">
+    </main>
+    <script src="photo.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

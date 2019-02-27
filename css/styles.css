@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #C2B2B4;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px
+}
+
+.nav-header-color-wraper {
+  background-color: #3E2A35;
+}
+
+.nav-bar-style {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+h1 {
+  color: #FFFFFF;
+  padding: 5px;
+}
+
+.foto-logo-style {
+  display: inline;
+  height: 30px;
+  margin: 0 6px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 3px;
+  height: 38px;
+  border: 2px solid #C2B2B4;
+  background-color: #C2B2B4;
+}
+
+.search-bar-style {
+  height: 35px;
+  align-self: center;
+  border-style: none;
+  height: 100%;
+  padding-left: 6px;
+}
+
+.material-icons {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px auto;
+  max-width: 500px;
+}
+
+.input-style {
+  height: 50px;
+  margin: 10px 0;
+}
+
+label {
+  color: #C2B2B4;
+}
+
+.input-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+  margin-top: 35px;
+}
+
+.choose-input {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.choose-label {
+  font-weight: 700;
+  background-color: #5B4447;
+  color: #FFFFFF;
+  display: inline-block;
+  text-align: center;
+  height: 50px;
+  line-height:3;
+  cursor: pointer;
+}
+
+.add-btn,
+.view-fav-btn {
+  width: 40%;
+  height: 50px;
+  background-color: #5B4447;
+  color: #FFFFFF;
+  border-style: none;
+  cursor: pointer;
+}
+
+.choose-label:hover,
+.view-fav-btn:hover,
+.add-btn:hover {
+  background-color: #938284;
+}
+
+.main-container {
+  background-color: #C2B2B4;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  padding: 20px;
+}
+
+.image-card {
+  max-width: 300px;
+  border:2px solid #938284;
+  margin: 20px auto;
+  background-color: #FFFFFF;
+  height: 500px;
+  width: 100%;
+}
+
+.uploaded-photo-style {
+  width: 100%;
+  height: 300px;
+}
+
+h3 {
+  text-align: center;
+  color: #3E2A35;
+  outline:0;
+}
+
+.image-btn-style {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  background-color: #3E2A35;
+  height: 40px;
+  width: 100%;
+  align-items: center;
+}
+
+.photo-btns {
+  height: 20px;
+  margin: 6px;
+}
+
+.caption-style {
+  padding: 0 5px;
+  height: 68px;
+  outline: 0;
+  overflow: auto;
+}
+
+.delete-btn {
+  margin-left: 10px;
+}
+
+.fav-btn {
+  margin-right: 10px;
+
+}
+
+@media screen and (min-width: 900px) {
+
+}
