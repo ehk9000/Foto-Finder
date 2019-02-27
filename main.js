@@ -19,7 +19,7 @@ search.addEventListener('keyup', searchPhotos);
 title.addEventListener('input', saveStatus);
 caption.addEventListener('input', saveStatus);
 input.addEventListener('input', saveStatus);
-viewFavsBtn.addEventListener('click', showFaves)
+viewFavsBtn.addEventListener('click', showFaves);
 
 // FUNCTIONS
 loadAlbum(photosArray);
