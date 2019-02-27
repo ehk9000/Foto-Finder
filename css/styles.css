@@ -183,6 +183,29 @@ h3 {
 
 }
 
-@media screen and (min-width: 900px) {
 
+@media screen and (max-width: 670px) {
+
+  .nav-bar-style {
+    flex-direction: column;
+  }
+
+  .search-bar-style {
+    min-width: 400px;
+  }
+
+  .input-container {
+    max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+
+  .search-bar-style {
+    min-width: 265px;
+  }
+
+  .input-container {
+    max-width: 300px;
+  }
 }

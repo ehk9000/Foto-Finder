@@ -9,6 +9,8 @@ var search = document.querySelector('.search-bar-style')
 var title = document.querySelector('#title-input');
 var caption = document.querySelector('#caption-input');
 var reader = new FileReader();
+var totalFavorite = 0;
+var photoCount = 0;
 
 
 // EVENT LISTENERS
@@ -136,20 +138,44 @@ function favClick(e) {
 
 function deactivateFav(targetPhoto) {
   (targetPhoto.favorite = false);
-  targetPhoto.updatePhoto();
-  targetPhoto.saveToStorage(photosArray);
+  decreaseFavoriteCount();
 }
 
 function showFav(element) {
   element.setAttribute('src', './images/favorite-active.svg');
+  element.setAttribute('value', 'true');
 }
 
 function hideFav(element) {
   element.setAttribute('src', './images/favorite.svg');
+  element.setAttribute('value', 'false');
+}
+
+function increaseFavoriteCount() {
+    var favoriteCount = document.querySelector('.favorite-count');
+    var totalFavorite = favoriteCount.innerText
+    totalFavorite++;
+    favoriteCount.innerHTML = totalFavorite;
+    console.log(favoriteCount);
+}
+
+function decreaseFavoriteCount() {
+  var favoriteCount = document.querySelector('.favorite-count');
+  var totalFavorite = favoriteCount.innerText
+  if (totalFavorite > 0){
+    totalFavorite --;
+    favoriteCount.innerHTML = totalFavorite;
+    console.log(favoriteCount);
+  }
+  else {
+    return;
+  }
 }
 
 function activateFav(targetPhoto) {
   (targetPhoto.favorite = true);
+  increaseFavoriteCount();
+
 }
 
 function clearInputs() {
@@ -163,7 +189,7 @@ function showFaves(e) {
   var photoFavs = [];
   clearPhotos();
   for (let i = 0; i < photosArray.length; i ++) {
-    if (photosArray[i].favorite == true) {
+    if (photosArray[i].favorite) {
       photoFavs.push(photosArray[i]);
       publishPhoto(photosArray[i]);
       loadFavs(photosArray[i]);
