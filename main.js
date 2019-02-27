@@ -83,7 +83,7 @@ function checkEmpty() {
 
 function loadFavs(prsArray) {
   var favorites = document.querySelectorAll('.fav-btn');
-   for (var i = 0; i < favorites.length; i++){
+   for (var i = 0; i < favorites.length; i++) {
     if (JSON.parse(favorites[i].dataset.fav)) {
       showFav(favorites[i]);
     }
@@ -91,7 +91,7 @@ function loadFavs(prsArray) {
 }
 
 function photoButtonListener(e) {
-  if (e.target.classList.contains('delete-btn')){
+  if (e.target.classList.contains('delete-btn')) {
     deletePhoto(e);
   } else if (e.target.classList.contains('fav-btn')) {
     favClick(e);
