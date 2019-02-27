@@ -31,14 +31,15 @@
         </form>
         <section class="input-container">
           <label for="image-upload" class="choose-label">Choose File</label>
-          <input type="file" name="file" class="choose-input" id="image-upload"></input>
+          <input type="file" name="file" class="choose-input" id="image-upload" accept="image/*"></input>
           <div class="input-btn-container">
-            <button type="button" name="favorites" class="view-fav-btn">View Favorites</button>
+            <button type="button" name="favorites" class="view-fav-btn" value="">View <span class="favorite-count"></span> Favorites</button>
             <button type="button" name="add" class="add-btn">Add to Album</button>
           </div>
         </section>
       </header>
     </div>
+    <h4 class="no-upload-msg">You haven't uploaded anything yet!</h4>
     <main class="main-container">
     </main>
     <script src="photo.js"></script>

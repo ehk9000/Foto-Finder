@@ -115,12 +115,23 @@ label {
   background-color: #938284;
 }
 
+.add-btn:disabled {
+  background-color: #938284;
+}
+
 .main-container {
   background-color: #C2B2B4;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: auto;
   padding: 20px;
+}
+
+h4 {
+  font-weight: 700;
+  color: #3E2A35;
+  text-align: center;
+  font-size: 18px;
 }
 
 .image-card {
@@ -165,15 +176,40 @@ h3 {
   overflow: auto;
 }
 
+.hide-me {
+  display: none;
+}
+
 .delete-btn {
   margin-left: 10px;
 }
 
 .fav-btn {
   margin-right: 10px;
-
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 670px) {
 
+  .nav-bar-style {
+    flex-direction: column;
+  }
+
+  .search-bar-style {
+    min-width: 400px;
+  }
+
+  .input-container {
+    max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+
+  .search-bar-style {
+    min-width: 265px;
+  }
+
+  .input-container {
+    max-width: 300px;
+  }
 }
