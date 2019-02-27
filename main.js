@@ -10,8 +10,6 @@ var title = document.querySelector('#title-input');
 var caption = document.querySelector('#caption-input');
 var reader = new FileReader();
 var totalFavorite = 0;
-var photoCount = 0;
-
 
 // EVENT LISTENERS
 addToAlbum.addEventListener('click', loadImg);
@@ -22,7 +20,6 @@ title.addEventListener('input', saveStatus);
 caption.addEventListener('input', saveStatus);
 input.addEventListener('input', saveStatus);
 viewFavsBtn.addEventListener('click', showFaves)
-
 
 // FUNCTIONS
 loadAlbum(photosArray);
@@ -79,10 +76,8 @@ function saveStatus() {
 }
 function checkEmpty() {
   var noUpload = document.querySelector('.no-upload-msg');
-  console.log(noUpload);
   if (!photosArray == []) {
     noUpload.classList.add('hide-me');
-
   }
 }
 
@@ -165,7 +160,6 @@ function increaseFavoriteCount() {
     var totalFavorite = favoriteCount.innerText
     totalFavorite++;
     favoriteCount.innerHTML = totalFavorite;
-    console.log(favoriteCount);
 }
 
 function decreaseFavoriteCount() {
@@ -174,7 +168,6 @@ function decreaseFavoriteCount() {
   if (totalFavorite > 0){
     totalFavorite --;
     favoriteCount.innerHTML = totalFavorite;
-    console.log(favoriteCount);
   }
   else {
     return;
@@ -184,7 +177,6 @@ function decreaseFavoriteCount() {
 function activateFav(targetPhoto) {
   (targetPhoto.favorite = true);
   increaseFavoriteCount();
-
 }
 
 function clearInputs() {
